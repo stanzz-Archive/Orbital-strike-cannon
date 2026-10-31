@@ -1,0 +1,23 @@
+name: OrbitalStrikeCannon
+version: 1.1.0
+main: id.orbitalstrike.OrbitalStrikePlugin
+api-version: '1.21.11'
+author: Stanzz Studio
+description: Orbital Strike Cannon
+
+commands:
+  orbital:
+    description: Gives the Orbital Strike Cannon
+    usage: /orbital
+    permission: orbital.use
+
+  orbitaltrade:
+    description: Opens the Orbital trading menu
+    usage: /orbitaltrade
+    permission: orbital.trade
+
+permissions:
+  orbital.use:
+    default: op
+  orbital.trade:
+    default: true
