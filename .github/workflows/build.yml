@@ -1,8 +1,10 @@
 name: Build Orbital Strike Cannon
 
-on:
+"on":
 push:
-branches: [ "main", "master" ]
+branches:
+- main
+- master
 workflow_dispatch:
 
 permissions:
@@ -22,12 +24,12 @@ uses: actions/checkout@v4
       java-version: '21'
       cache: maven
 
-  - name: Build plugin with Maven
-    run: mvn --batch-mode --no-transfer-progress clean package
+  - name: Build plugin
+    run: mvn clean package
 
-  - name: Upload compiled plugin JAR
+  - name: Upload JAR
     uses: actions/upload-artifact@v4
     with:
-      name: OrbitalStrikeCannon-Paper-1.21.11
-      path: target/OrbitalStrikeCannon-1.1.0.jar
+      name: OrbitalStrikeCannon
+      path: '**/target/*.jar'
       if-no-files-found: error
